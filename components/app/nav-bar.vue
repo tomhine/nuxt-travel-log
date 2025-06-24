@@ -5,7 +5,8 @@
         Travel Log
       </NuxtLink>
     </div>
-    <div class="navbar-end">
+    <div class="navbar-end gap-4">
+      <AppThemeToggle />
       <a class="btn btn-accent">
         <Icon
           name="tabler:brand-github"
