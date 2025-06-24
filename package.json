@@ -28,5 +28,8 @@
   },
   "lint-staged": {
     "*": "pnpm lint"
+  },
+  "volta": {
+    "node": "24.2.0"
   }
 }
