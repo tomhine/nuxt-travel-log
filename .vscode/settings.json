@@ -41,10 +41,7 @@
     "xml"
   ],
 
-  "pair-diff.patterns": [
-    {
-      "source": "./fixtures/output/**/*.*",
-      "target": "./fixtures/input/<base>"
-    }
-  ]
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
 }
