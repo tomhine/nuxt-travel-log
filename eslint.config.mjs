@@ -15,7 +15,7 @@ export default withNuxt(
         semi: true,
         quotes: "double",
       },
-      ignores: ["**/migrations/*"],
+      ignores: ["**/migrations/*", "pnpm-workspace.yaml"],
     },
     {
       rules: {
