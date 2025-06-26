@@ -3,7 +3,25 @@ const authStore = useAuthStore();
 </script>
 
 <template>
-  <button :disabled="authStore.loading" class="btn btn-accent" @click="authStore.signIn">
+  <div v-if="!authStore.loading && authStore.user" class="dropdown dropdown-end">
+    <div tabindex="0" role="button" class="btn m-1 gap-4">
+      <div v-if="authStore.user.image" class="avatar">
+        <div class="w-6 rounded-full">
+          <img :src="authStore.user.image" :alt="authStore.user.name">
+        </div>
+      </div>
+      {{ authStore.user.name }}
+    </div>
+    <ul tabindex="0" class="dropdown-content menu bg-base-200 rounded-box z-1 w-52 p-2 shadow-sm">
+      <li>
+        <NuxtLink to="/log-out">
+          <Icon name="tabler:logout" size="24" />
+          Log out
+        </NuxtLink>
+      </li>
+    </ul>
+  </div>
+  <button v-else :disabled="authStore.loading" class="btn btn-accent" @click="authStore.signIn">
     <span v-if="authStore.loading" class="loading loading-spinner loading-sm" />
     <Icon
       v-else
