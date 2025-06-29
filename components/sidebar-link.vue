@@ -23,7 +23,7 @@ const sidebar = useSidebarStore();
     >
       <Icon :name="props.icon" size="24" />
       <Transition name="grow">
-        <span v-if="sidebar.open">
+        <span v-if="sidebar.open && !sidebar.closing">
           {{ props.label }}
         </span>
       </Transition>

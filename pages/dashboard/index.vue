@@ -4,7 +4,7 @@ const sidebar = useSidebarStore();
 
 <template>
   <div class="flex-1 flex">
-    <section class="bg-base-200 transition-all duration-300" :class="{ 'w-64': sidebar.open || sidebar.opening, 'w-14': !sidebar.open || sidebar.closing }">
+    <section class="bg-base-200 transition-all duration-300" :class="{ 'w-64': (sidebar.open && !sidebar.closing) || sidebar.opening, 'w-14': !sidebar.open || (sidebar.open && sidebar.closing) }">
       <header class="flex justify-end p-2">
         <button class="btn btn-circle" aria-label="Toggle sidebar" @click="sidebar.toggle">
           <Icon name="tabler:chevron-left" size="32" class="transition" :class="{ 'rotate-180': !sidebar.open }" />
